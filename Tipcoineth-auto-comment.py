@@ -7,9 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 driver = webdriver.Chrome()
 url = "https://twitter.com/search?q=%24tip&src=cashtag_click"
 driver.get(url)
-
-tm_div = driver.find_element(By.XPATH, '//div[@aria-label="时间线：搜索时间线"]')
-tweet_elements = ttm_div.find_elements(By.CSS_SELECTOR, 'div[data-testid="cellInnerDiv"]')
+# login your account
+tm_div = driver.find_element(By.XPATH, '//div[@aria-label="时间线：搜索时间线"]') 
+tweet_elements = tm_div.find_elements(By.CSS_SELECTOR, 'div[data-testid="cellInnerDiv"]')
 
 for tweet in tweet_elements:
     try:
